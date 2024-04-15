@@ -1,4 +1,4 @@
-package com.dulgi.derby.ex;
+package dulgi.derbyexample;
 
 import org.junit.After;
 import org.junit.Before;

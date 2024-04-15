@@ -1,4 +1,4 @@
-package com.dulgi.derby.ex;
+package dulgi.derbyexample;
 
 import org.apache.commons.dbcp2.*;
 import org.apache.commons.pool2.impl.GenericObjectPool;
