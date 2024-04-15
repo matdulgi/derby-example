@@ -1,4 +1,4 @@
-package com.dulgi.derby.ex.tasks;
+package dulgi.derbyexample.tasks;
 
 import java.util.List;
 

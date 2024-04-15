@@ -1,4 +1,4 @@
-package com.dulgi.derby.ex.tasks;
+package dulgi.derbyexample.tasks;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,22 +6,22 @@ import org.junit.Test;
 public class BasicDMLTaskTest {
     BasicDMLTask task = new BasicDMLTask();
 
-    String tmpTableName2 = "tmp2";
+    String tableName = "tmp2";
     String tmpInsertValue = "goodday";
 
     @Test
     public void selectAndPrintTest(){
-        task.selectAndPrint(tmpTableName2, 10);
+        task.selectAndPrint(tableName, 10);
     }
 
     @Test
     public void countTableTest(){
-        task.countTable(tmpTableName2);
+        task.countTable(tableName);
     }
 
     @Test
-    public void insertWithDriverTest() {
-        Assert.assertFalse(task.insert(tmpTableName2, tmpInsertValue));
+    public void testInsertWithDriver() {
+        Assert.assertFalse(task.insert(tableName, tmpInsertValue));
     }
 
     @Test

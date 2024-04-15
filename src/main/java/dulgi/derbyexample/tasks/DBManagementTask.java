@@ -1,9 +1,13 @@
-package com.dulgi.derby.ex.tasks;
+package dulgi.derbyexample.tasks;
 
 import java.sql.SQLException;
 
 public class DBManagementTask {
     BaseDataAccessor basicDataAccessor = new BaseDataAccessor();
+
+    public void createDerby(){
+
+    }
 
     public void shutdown() {
 //        Connection connection = basicDataAccessor.getConnection("jdbc:derby:;shutdown=true");

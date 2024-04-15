@@ -1,0 +1,7 @@
+derby.log
+target/
+.idea/
+derbyDB/
+.DS_Store
+*.iml
+*.iml~

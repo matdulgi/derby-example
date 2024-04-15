@@ -1,17 +1,17 @@
-package com.dulgi.derby.ex.tasks;
+package dulgi.derbyexample.tasks;
 
-import com.dulgi.derby.ex.BasicDerbyDBEx;
+import dulgi.derbyexample.BasicDerbyDBEx;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * This class is base component of other DAO Classes
  */
 public class BaseDataAccessor {
     private  final String connectionString = BasicDerbyDBEx.CONNECTION_STRING;
-//    private final String connectionString = DerbyDBCPEx.CONNECTION_STRING;
-
 
     public boolean execute(String sql) {
         try (Connection connection = DriverManager.getConnection(connectionString) ) {
@@ -42,10 +42,14 @@ public class BaseDataAccessor {
             int c = 0;
             while (resultSet.next() && c++ < rowNum || rowNum == -1) {
                 StringBuilder stringBuilder = new StringBuilder();
-                for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
-                    if (i > 1) stringBuilder.append(",  ");
-                    stringBuilder.append(resultSet.getString(i));
-                }
+                IntStream.rangeClosed(1, resultSet.getMetaData().getColumnCount()).forEach( i -> {
+                if (i > 1) stringBuilder.append(",  ");
+                    try {
+                        stringBuilder.append(resultSet.getString(i));
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                } );
                 list.add(stringBuilder.toString());
             }
         } catch (SQLException e){

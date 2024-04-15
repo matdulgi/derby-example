@@ -1,4 +1,4 @@
-package com.dulgi.derby.ex;
+package dulgi.derbyexample;
 
 public class BasicDerbyDBEx {
     static final public String DRIVER_CLASS_NAME = "org.apache.derby.jdbc.EmbeddedDriver";
